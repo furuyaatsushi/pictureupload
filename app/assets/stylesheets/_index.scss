@@ -1,0 +1,43 @@
+.container{
+  padding: 10px;
+  .new-btn{
+    height: 20px;
+    width: 50px;
+  }
+  .tweet-container{
+    margin: 0 auto;
+    width: 50%;
+    .tweet-box{
+      margin-top: 5px;
+      border-bottom: 1px solid #f5f5f5;
+      .tweet-content{
+        margin-bottom: 5px;
+      }
+      .tweet-image{
+        height: 50px;
+        img{
+          height: 99%;
+        }
+      }
+    }
+  }
+}
+
+.contents{
+  padding: 10px;
+  form{
+    .text-box{
+      margin-bottom: 10px;
+    }
+    .file{
+      display: inline-block;
+      .image-field{
+        height: 60px;
+        img{
+          height: 100%;
+          display: block;
+        }
+      }
+    }
+  }
+}

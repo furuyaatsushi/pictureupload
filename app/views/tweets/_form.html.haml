@@ -1,0 +1,25 @@
+.contents
+  - if @tweet.errors.any?
+    .chat-group-form__errors
+      %h2="#{@tweet.errors.full_messages.count}件のエラーが発生しました。"
+      %ul
+        - @tweet.errors.full_messages.each do |message|
+          %li= message
+  = form_for @tweet, class: "form" do |f|
+    .text-box
+      = f.label :content, "テキスト"
+      = f.text_area :content, placeholder: "ツイート"
+    - if @tweet.images
+      - @tweet.images.each do |img|
+        .file
+          = f.fields_for :images, img do |c|
+            .image-field{id: "#{c.index}"}
+              - if img.url.present?
+                = image_tag img.url
+              - else
+                .image-blank
+
+            = c.file_field :url
+            
+    .submit
+      = f.submit "投稿", {class: "btn"}

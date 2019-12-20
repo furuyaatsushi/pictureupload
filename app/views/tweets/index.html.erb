@@ -1,0 +1,22 @@
+<div class='container'>
+  <div class='new-btn'>
+    <%= link_to '投稿', new_tweet_path %>
+  </div>
+  <div class='tweet-container'>
+    <% @tweets.each do |tweet| %>
+      <div class='tweet-box'>
+        <div class='tweet-content'>
+          <%= tweet.content %>
+        </div>
+        <div class='tweet-image'>
+          <% tweet.images.each do |img| %>
+            <%= image_tag img.url%>
+          <% end %>
+        </div>
+        <div class='edit'>
+          <%= link_to '編集', edit_tweet_path(tweet) %>
+        </div>
+      </div>
+    <%end%>
+  </div>
+</div>
